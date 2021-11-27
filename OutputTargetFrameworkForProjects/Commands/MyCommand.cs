@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using Task = System.Threading.Tasks.Task;
 
 namespace OutputTargetFrameworkForProjects
@@ -17,6 +18,19 @@ namespace OutputTargetFrameworkForProjects
         {
             await Package.JoinableTaskFactory.SwitchToMainThreadAsync();
 
+            await CreateAndOpenOutputFileAsync().ConfigureAwait(false);
+
+            DocumentView docView = await VS.Documents.GetActiveDocumentViewAsync().ConfigureAwait(false);
+            if (docView?.TextView == null) return;
+            SnapshotPoint position = docView.TextView.Caret.Position.BufferPosition;
+
+            var projects = await VS.Solutions.GetAllProjectsAsync();
+            projects.ToList()
+                    .ForEach(project => docView.TextBuffer?.Insert(position, OutputProjectInfo(project)));
+        }
+
+        private static async Task CreateAndOpenOutputFileAsync()
+        {
             var directory = @"C:\temp";
             var solution = await VS.Solutions.GetCurrentSolutionAsync().ConfigureAwait(false);
             var solutionName = string.IsNullOrEmpty(solution.Name)
@@ -33,13 +47,6 @@ namespace OutputTargetFrameworkForProjects
             File.Create(path).Close();
 
             await VS.Documents.OpenAsync(path);
-
-            DocumentView docView = await VS.Documents.GetActiveDocumentViewAsync();
-            if (docView?.TextView == null) return;
-            SnapshotPoint position = docView.TextView.Caret.Position.BufferPosition;
-
-            var projects = await VS.Solutions.GetAllProjectsAsync();
-            projects.ToList().ForEach(project => docView.TextBuffer?.Insert(position, OutputProjectInfo(project)));
         }
 
         private string OutputProjectInfo(Project project)
