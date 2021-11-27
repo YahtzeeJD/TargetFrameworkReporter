@@ -1,4 +1,4 @@
-﻿using OutputTargetFrameworkForProjects;
+﻿using TargetFrameworkReporter;
 using System.Reflection;
 using System.Runtime.InteropServices;
 

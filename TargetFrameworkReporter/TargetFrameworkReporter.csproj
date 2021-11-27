@@ -13,8 +13,8 @@
     <ProjectGuid>{1E9A422E-175A-4A5C-AFAD-A9F850E469E9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OutputTargetFrameworkForProjects</RootNamespace>
-    <AssemblyName>OutputTargetFrameworkForProjects</AssemblyName>
+    <RootNamespace>TargetFrameworkReporter</RootNamespace>
+    <AssemblyName>TargetFrameworkReporter</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <UseCodebase>true</UseCodebase>

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using Task = System.Threading.Tasks.Task;
 
-namespace OutputTargetFrameworkForProjects
+namespace TargetFrameworkReporter
 {
     [Command(PackageIds.MyCommand)]
     internal sealed class MyCommand : BaseCommand<MyCommand>

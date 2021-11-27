@@ -6,9 +6,9 @@
 	<Include href="KnownImageIds.vsct"/>
 	<Include href="VSGlobals.vsct"/>
 
-	<Commands package="OutputTargetFrameworkForProjects">
+	<Commands package="TargetFrameworkReporter">
 		<Groups>
-			<Group guid="OutputTargetFrameworkForProjects" id="MyMenuGroup" priority="0x0600">
+			<Group guid="TargetFrameworkReporter" id="MyMenuGroup" priority="0x0600">
 				<Parent guid="VSMainMenu" id="Tools"/>
 			</Group>
 		</Groups>
@@ -16,20 +16,20 @@
 		<!--This section defines the elements the user can interact with, like a menu command or a button
         or combo box in a toolbar. -->
 		<Buttons>
-			<Button guid="OutputTargetFrameworkForProjects" id="MyCommand" priority="0x0100" type="Button">
-				<Parent guid="OutputTargetFrameworkForProjects" id="MyMenuGroup" />
+			<Button guid="TargetFrameworkReporter" id="MyCommand" priority="0x0100" type="Button">
+				<Parent guid="TargetFrameworkReporter" id="MyMenuGroup" />
 				<Icon guid="ImageCatalogGuid" id="LaunchSamplingTarget" />
 				<CommandFlag>IconIsMoniker</CommandFlag>
 				<Strings>
 					<ButtonText>Output Target Framework For Projects</ButtonText>
-					<LocCanonicalName>.Tools.OutputTargetFrameworkForProjects</LocCanonicalName>
+					<LocCanonicalName>.Tools.TargetFrameworkReporter</LocCanonicalName>
 				</Strings>
 			</Button>
 		</Buttons>
 	</Commands>
 
 	<Symbols>
-		<GuidSymbol name="OutputTargetFrameworkForProjects" value="{7c86d624-f47f-4a83-a34d-bc26ac28c00c}">
+		<GuidSymbol name="TargetFrameworkReporter" value="{7c86d624-f47f-4a83-a34d-bc26ac28c00c}">
 			<IDSymbol name="MyMenuGroup" value="0x0001" />
 			<IDSymbol name="MyCommand" value="0x0100" />
 		</GuidSymbol>
