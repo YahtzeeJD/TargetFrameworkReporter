@@ -11,7 +11,7 @@ namespace OutputTargetFrameworkForProjects
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(PackageGuids.OutputTargetFrameworkForProjectsString)]
-    public sealed class OutputTargetFrameworkForProjectsPackage : ToolkitPackage
+    public sealed class TargetFrameworkReporterPackage : ToolkitPackage
     {
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {

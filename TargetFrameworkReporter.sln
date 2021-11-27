@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31911.196
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutputTargetFrameworkForProjects", "OutputTargetFrameworkForProjects\OutputTargetFrameworkForProjects.csproj", "{1E9A422E-175A-4A5C-AFAD-A9F850E469E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TargetFrameworkReporter", "OutputTargetFrameworkForProjects\TargetFrameworkReporter.csproj", "{1E9A422E-175A-4A5C-AFAD-A9F850E469E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

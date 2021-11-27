@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="OutputTargetFrameworkForProjects.db9e0bb1-51c6-452a-966c-89b04610c31f" Version="1.0" Language="en-US" Publisher="John J. DeFalco" />
-        <DisplayName>OutputTargetFrameworkForProjects</DisplayName>
+        <Identity Id="TargetFrameworkReporter.db9e0bb1-51c6-452a-966c-89b04610c31f" Version="1.0" Language="en-US" Publisher="John J. DeFalco" />
+        <DisplayName>TargetFrameworkReporter</DisplayName>
         <Description xml:space="preserve">Outputs the target framework for every project in the solution to a new text file</Description>
-        <Icon>target.ico</Icon>
-        <PreviewImage>target.ico</PreviewImage>
+        <Icon>Resources\target.ico</Icon>
+        <PreviewImage>Resources\target.ico</PreviewImage>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
