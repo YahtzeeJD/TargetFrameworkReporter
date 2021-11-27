@@ -18,7 +18,11 @@ namespace OutputTargetFrameworkForProjects
             await Package.JoinableTaskFactory.SwitchToMainThreadAsync();
 
             var directory = @"C:\temp";
-            var fileName = @"project-versions.txt";
+            var solution = await VS.Solutions.GetCurrentSolutionAsync().ConfigureAwait(false);
+            var solutionName = string.IsNullOrEmpty(solution.Name)
+                                ? "Unknown solution"
+                                : solution.Name.Replace(".sln", "");
+            var fileName = solutionName + " project target frameworks.txt";
             var path = Path.Combine(directory, fileName);
 
             if (!Directory.Exists(directory))

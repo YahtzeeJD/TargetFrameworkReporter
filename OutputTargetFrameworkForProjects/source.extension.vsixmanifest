@@ -3,13 +3,14 @@
     <Metadata>
         <Identity Id="OutputTargetFrameworkForProjects.db9e0bb1-51c6-452a-966c-89b04610c31f" Version="1.0" Language="en-US" Publisher="John J. DeFalco" />
         <DisplayName>OutputTargetFrameworkForProjects</DisplayName>
-        <Description xml:space="preserve">Outputs the target framework for every project in the solution to the currently active document</Description>
-        <Icon>Resources\Icon.png</Icon>
-        <PreviewImage>Resources\Icon.png</PreviewImage>
+        <Description xml:space="preserve">Outputs the target framework for every project in the solution to a new text file</Description>
+        <Icon>target.ico</Icon>
+        <PreviewImage>target.ico</PreviewImage>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
         <InstallationTarget Version="[16.0,17.0)" Id="Microsoft.VisualStudio.Pro" />
+        <InstallationTarget Version="[16.0,17.0)" Id="Microsoft.VisualStudio.Enterprise" />
     </Installation>
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0,)" DisplayName="Visual Studio core editor" />
