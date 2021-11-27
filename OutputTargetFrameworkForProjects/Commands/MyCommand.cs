@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using Task = System.Threading.Tasks.Task;
 
 namespace OutputTargetFrameworkForProjects
@@ -16,12 +17,17 @@ namespace OutputTargetFrameworkForProjects
         {
             await Package.JoinableTaskFactory.SwitchToMainThreadAsync();
 
+            var directory = @"C:\temp";
             var fileName = @"project-versions.txt";
-            var path = Path.Combine(AppDomain.CurrentDomain.RelativeSearchPath ?? AppDomain.CurrentDomain.BaseDirectory, fileName);
+            var path = Path.Combine(directory, fileName);
+
+            if (!Directory.Exists(directory))
+                Directory.CreateDirectory(directory);
 
             if (File.Exists(path))
                 File.Delete(path);
-            File.Create(path);
+            File.Create(path).Close();
+
             await VS.Documents.OpenAsync(path);
 
             DocumentView docView = await VS.Documents.GetActiveDocumentViewAsync();
@@ -35,12 +41,13 @@ namespace OutputTargetFrameworkForProjects
         private string OutputProjectInfo(Project project)
         {
             var sb = new StringBuilder();
-            sb.Append(project.Name + "|");
+            sb.Append(project.Name);
             sb.Append("|");
             sb.Append(project.GetAttributeAsync("TargetFrameworkMoniker").GetAwaiter().GetResult());
             sb.Append(Environment.NewLine);
 
             return sb.ToString();
+            //return project.Name; // + "|" + project.GetAttributeAsync("TargetFrameworkMoniker").GetAwaiter().GetResult() + Environment.NewLine;
         }
     }
 }
