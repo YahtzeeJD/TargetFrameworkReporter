@@ -21,7 +21,7 @@
 				<Icon guid="ImageCatalogGuid" id="LaunchSamplingTarget" />
 				<CommandFlag>IconIsMoniker</CommandFlag>
 				<Strings>
-					<ButtonText>Output Target Framework For Projects</ButtonText>
+					<ButtonText>Target Framework Reporter</ButtonText>
 					<LocCanonicalName>.Tools.TargetFrameworkReporter</LocCanonicalName>
 				</Strings>
 			</Button>
