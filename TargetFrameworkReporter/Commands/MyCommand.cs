@@ -51,7 +51,7 @@ namespace TargetFrameworkReporter
         {
             var sb = new StringBuilder();
             sb.Append(project.Name);
-            sb.Append("|");
+            sb.Append(",");
             sb.Append(project.GetAttributeAsync("TargetFrameworkMoniker").GetAwaiter().GetResult());
             sb.Append(Environment.NewLine);
 
