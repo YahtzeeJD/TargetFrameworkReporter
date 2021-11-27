@@ -51,7 +51,6 @@ namespace OutputTargetFrameworkForProjects
             sb.Append(Environment.NewLine);
 
             return sb.ToString();
-            //return project.Name; // + "|" + project.GetAttributeAsync("TargetFrameworkMoniker").GetAwaiter().GetResult() + Environment.NewLine;
         }
     }
 }
